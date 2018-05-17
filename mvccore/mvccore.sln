@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PartyInvites", "PartyInvites\PartyInvites.csproj", "{D093BE07-56DB-4C6F-B98D-41933E1CACCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Book", "Book", "{BF51A181-BA04-4530-81CE-EDF3583B64A2}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Thinh\Desktop\scss\Pro Entity Framework Core 2 for ASP.NET Core MVC.pdf = C:\Users\Thinh\Desktop\scss\Pro Entity Framework Core 2 for ASP.NET Core MVC.pdf
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D093BE07-56DB-4C6F-B98D-41933E1CACCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D093BE07-56DB-4C6F-B98D-41933E1CACCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D093BE07-56DB-4C6F-B98D-41933E1CACCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D093BE07-56DB-4C6F-B98D-41933E1CACCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4185EB67-C505-4F7C-A41D-663AA6583F47}
+	EndGlobalSection
+EndGlobal
