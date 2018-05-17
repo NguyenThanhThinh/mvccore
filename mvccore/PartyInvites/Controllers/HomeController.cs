@@ -8,10 +8,10 @@ namespace PartyInvites.Controllers
     {
         private DataContext db;
 
-        protected HomeController(DataContext db)
-        {
-            this.db = db;
-        }
+        //protected HomeController(DataContext db)
+        //{
+        //    this.db = db;
+        //}
 
         public IActionResult Index()
         {
