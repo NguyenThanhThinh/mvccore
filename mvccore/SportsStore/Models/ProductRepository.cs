@@ -1,18 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using SportsStore.Data;
 
 namespace SportsStore.Models
 {
     public class ProductRepository : IRepository
     {
-        private List<Product> data = new List<Product>();
-        public IEnumerable<Product> Products => data;
+        protected SportStoreDbContext DbContext { get; }
+
+        public ProductRepository(SportStoreDbContext dbContext)
+        {
+            DbContext = dbContext;
+        }
+
+        public IEnumerable<Product> Products => DbContext.Products;
 
         public void AddProduct(Product product)
         {
-            data.Add(product);
+            DbContext.Add(product);
+            DbContext.SaveChanges();
         }
     }
 }
