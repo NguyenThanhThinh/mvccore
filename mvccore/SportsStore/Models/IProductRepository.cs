@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsStore.Models
 {
-    public interface IRepository
+    public interface IProductRepository
     {
         IEnumerable<Product> Products { get; }
         Product GetProduct(long key);

@@ -5,11 +5,11 @@ using SportsStore.Data;
 
 namespace SportsStore.Models
 {
-    public class ProductRepository : IRepository
+    public class ProductProductRepository : IProductRepository
     {
         protected SportStoreDbContext DbContext { get; }
 
-        public ProductRepository(SportStoreDbContext dbContext)
+        public ProductProductRepository(SportStoreDbContext dbContext)
         {
             DbContext = dbContext;
         }
