@@ -1,24 +1,27 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using PartyInvites.Models;
 
 namespace PartyInvites.Controllers
 {
-    using PartyInvites.Models;
     public class HomeController : Controller
     {
         private DataContext db;
 
-        //protected HomeController(DataContext db)
-        //{
-        //    this.db = db;
-        //}
+        protected HomeController(DataContext db)
+        {
+            this.db = db;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Respond() => View();
+        public IActionResult Respond()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Respond(RuestResponse ruestResponse)
@@ -26,14 +29,13 @@ namespace PartyInvites.Controllers
             db.Responses.Add(ruestResponse);
             db.SaveChanges();
             return RedirectToAction(nameof(Thanks),
-           new
-           {
-               Name = ruestResponse.Name,
-               WillAttend = ruestResponse.WillAttend
-           });
+                new {ruestResponse.Name, ruestResponse.WillAttend});
         }
 
-        public IActionResult Thanks() => View();
+        public IActionResult Thanks()
+        {
+            return View();
+        }
 
         public IActionResult ListResponses()
         {
