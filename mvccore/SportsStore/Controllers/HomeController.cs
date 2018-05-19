@@ -50,5 +50,15 @@ namespace SportsStore.Controllers
             _repository.UpdateAll(products);
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpPost]
+        public IActionResult Delete(Product product)
+        {
+            _repository.DeleteProduct(product);
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
     }
 }

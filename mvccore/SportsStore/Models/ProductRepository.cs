@@ -44,5 +44,11 @@ namespace SportsStore.Models
             DbContext.Products.UpdateRange(products);
             DbContext.SaveChanges();
         }
+
+        public void DeleteProduct(Product product)
+        {
+            this.DbContext.Products.Remove(product);
+            DbContext.SaveChanges();
+        }
     }
 }
