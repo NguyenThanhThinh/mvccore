@@ -11,7 +11,7 @@ using System;
 namespace SportsStore.Migrations
 {
     [DbContext(typeof(SportStoreDbContext))]
-    [Migration("20180519151831_init")]
+    [Migration("20180519184838_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,12 +21,28 @@ namespace SportsStore.Migrations
                 .HasAnnotation("ProductVersion", "2.0.3-rtm-10026")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("SportsStore.Models.Category", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("SportsStore.Models.Product", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Category");
+                    b.Property<int>("CategoryId");
+
+                    b.Property<long?>("CategoryId1");
 
                     b.Property<string>("Name");
 
@@ -36,7 +52,16 @@ namespace SportsStore.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId1");
+
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("SportsStore.Models.Product", b =>
+                {
+                    b.HasOne("SportsStore.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId1");
                 });
 #pragma warning restore 612, 618
         }
