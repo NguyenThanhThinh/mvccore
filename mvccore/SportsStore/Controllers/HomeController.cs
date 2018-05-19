@@ -28,13 +28,16 @@ namespace SportsStore.Controllers
 
         public IActionResult UpdateProduct(long key)
         {
-            return View(_repository.GetProduct(key));
+            return View(key == 0 ? new Product() : _repository.GetProduct(key));
         }
 
         [HttpPost]
         public IActionResult UpdateProduct(Product product)
         {
-            _repository.UpdateProduct(product);
+            if (product.Id == 0)
+                _repository.AddProduct(product);
+            else
+                _repository.UpdateProduct(product);
             return RedirectToAction(nameof(Index));
         }
 
@@ -57,8 +60,5 @@ namespace SportsStore.Controllers
             _repository.DeleteProduct(product);
             return RedirectToAction(nameof(Index));
         }
-
-
-
     }
 }
