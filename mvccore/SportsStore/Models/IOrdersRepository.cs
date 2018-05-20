@@ -2,7 +2,7 @@
 
 namespace SportsStore.Models
 {
-    public interface IOrderRepository
+    public interface IOrdersRepository
     {
         IEnumerable<Order> Orders { get; }
         void AddOrder(Order order);

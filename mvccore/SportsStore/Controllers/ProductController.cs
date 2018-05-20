@@ -8,7 +8,7 @@ namespace SportsStore.Controllers
         private readonly IProductRepository _productRepository;
         private ICategoryRepository _categoryRepository;
 
-        public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository)
+        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
