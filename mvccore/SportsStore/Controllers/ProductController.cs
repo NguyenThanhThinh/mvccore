@@ -6,10 +6,12 @@ namespace SportsStore.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepository _productRepository;
+        private ICategoryRepository _categoryRepository;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository,ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public IActionResult Index()
@@ -28,6 +30,7 @@ namespace SportsStore.Controllers
 
         public IActionResult UpdateProduct(long key)
         {
+            ViewBag.Categories = _categoryRepository.Categories;
             return View(key == 0 ? new Product() : _productRepository.GetProduct(key));
         }
 

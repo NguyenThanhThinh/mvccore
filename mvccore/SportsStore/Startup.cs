@@ -20,10 +20,10 @@ namespace SportsStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddTransient<IProductRepository, ProductProductRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
             var conString = Configuration["ConnectionStrings:DefaultConnection"];
-            services.AddDbContext<SportStoreDbContext>(options =>
-                options.UseSqlServer(conString));
+            services.AddDbContext<SportStoreDbContext>(options => options.UseSqlServer(conString));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
