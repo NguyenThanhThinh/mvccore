@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SportsStore.Models
 {
-    public class IOrderRepository
+    public interface IOrderRepository
     {
+        IEnumerable<Order> Orders { get; }
+        void AddOrder(Order order);
+        void UpdateOrder(Order order);
+        void DeleteOrder(Order order);
+
     }
 }
